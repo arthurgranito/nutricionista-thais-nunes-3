@@ -3,23 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thais Nunes | Nutricionista em Teresópolis, RJ</title>
-<link rel="icon" id="site-favicon" href="https://images.unsplash.com/photo-1556911073-52527ac43761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8OXx8bnV0cmljaW9uaXN0YXxlbnwxfDB8fHwxNzg4MTIzNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080">
+<title>Thais Nunes Nutricionista | Teresópolis, RJ</title>
+<meta name="description" content="Nutrição clínica acolhedora em Teresópolis, RJ. Acompanhamento personalizado para você viver com mais equilíbrio e saúde.">
+<link rel="icon" id="site-favicon" href="https://images.unsplash.com/photo-1493770348161-369560ae357d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8NXx8bnV0cmljaW9uaXN0YXxlbnwxfDB8fHwxNzg4MTIzNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --color-primary: #5c7d6c;
-    --color-secondary: #e8e0cf;
-    --color-accent: #c98a5e;
-    --color-background: #fbf8f2;
-    --color-text: #33352f;
+    --color-primary: #6E8B74;
+    --color-secondary: #F4EFE6;
+    --color-accent: #C98A5E;
+    --color-background: #FBF8F3;
+    --color-text: #3B3A34;
+
     --font-heading: 'Fraunces', serif;
-    --font-body: 'Manrope', sans-serif;
+    --font-body: 'Karla', sans-serif;
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; }
 
   html { scroll-behavior: smooth; }
 
@@ -27,8 +31,15 @@
     font-family: var(--font-body);
     color: var(--color-text);
     background: var(--color-background);
-    line-height: 1.6;
+    line-height: 1.65;
     overflow-x: hidden;
+  }
+
+  h1,h2,h3,h4 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--color-text);
   }
 
   a { text-decoration: none; color: inherit; }
@@ -41,24 +52,22 @@
     padding: 0 32px;
   }
 
-  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 500; }
-
-  /* HEADER */
+  /* ---------- HEADER ---------- */
   header {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 1000;
-    background: rgba(251, 248, 242, 0.88);
+    background: rgba(251,248,243,0.9);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(92, 125, 108, 0.15);
-    transition: box-shadow .3s;
+    border-bottom: 1px solid rgba(59,58,52,0.08);
+    transition: padding .3s ease;
   }
 
   .nav-wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 18px 32px;
+    padding: 20px 32px;
     max-width: 1180px;
     margin: 0 auto;
   }
@@ -66,10 +75,15 @@
   #site-logo-text {
     font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: var(--color-primary);
     letter-spacing: 0.5px;
+    color: var(--color-primary);
+    font-weight: 600;
   }
-  #site-logo-text span { color: var(--color-accent); font-style: italic; }
+
+  #site-logo-text span {
+    color: var(--color-accent);
+    font-style: italic;
+  }
 
   nav ul {
     display: flex;
@@ -87,22 +101,23 @@
   nav a::after {
     content: '';
     position: absolute;
-    left: 0; bottom: 0;
-    width: 0%;
+    bottom: 0; left: 0;
+    width: 0;
     height: 2px;
     background: var(--color-accent);
-    transition: width .3s;
+    transition: width .3s ease;
   }
+
   nav a:hover::after { width: 100%; }
 
-  .btn-nav-whats {
+  .nav-cta {
     background: var(--color-primary);
     color: #fff !important;
     padding: 10px 22px;
     border-radius: 30px;
+    font-size: 0.9rem;
     font-weight: 600;
   }
-  .btn-nav-whats::after { display: none; }
 
   .menu-toggle {
     display: none;
@@ -114,59 +129,56 @@
   }
   .menu-toggle span {
     width: 26px; height: 2px;
-    background: var(--color-primary);
-    display: block;
+    background: var(--color-text);
   }
 
-  /* HERO */
+  /* ---------- HERO ---------- */
   .hero {
     position: relative;
-    padding: 160px 0 100px;
-    overflow: hidden;
-  }
-
-  .hero-blob {
-    position: absolute;
-    top: -120px; right: -160px;
-    width: 560px; height: 560px;
-    background: var(--color-secondary);
-    border-radius: 47% 53% 61% 39% / 45% 41% 59% 55%;
-    z-index: 0;
-    opacity: .8;
-  }
-
-  .hero-grid {
-    position: relative;
-    z-index: 1;
+    padding: 170px 32px 90px;
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 60px;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
+    gap: 40px;
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: -220px;
+    width: 480px; height: 480px;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    z-index: -1;
   }
 
   .hero-eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-primary);
     font-weight: 700;
     margin-bottom: 22px;
   }
+
   .hero-eyebrow::before {
     content: '';
-    width: 30px; height: 1px;
-    background: var(--color-accent);
+    width: 30px;
+    height: 1px;
+    background: var(--color-primary);
   }
 
   .hero h1 {
-    font-size: clamp(2.4rem, 5vw, 3.6rem);
-    line-height: 1.12;
-    color: var(--color-text);
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
     margin-bottom: 24px;
   }
+
   .hero h1 em {
     font-style: italic;
     color: var(--color-primary);
@@ -174,368 +186,372 @@
 
   .hero p.lead {
     font-size: 1.1rem;
-    max-width: 460px;
-    color: #545648;
-    margin-bottom: 36px;
+    max-width: 480px;
+    color: #5c5b53;
+    margin-bottom: 34px;
   }
 
-  .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
+  .hero-buttons { display: flex; gap: 18px; flex-wrap: wrap; }
 
   .btn-primary {
-    background: var(--color-accent);
+    background: var(--color-primary);
     color: #fff;
-    padding: 15px 34px;
-    border-radius: 4px;
+    padding: 15px 32px;
+    border-radius: 40px;
     font-weight: 600;
     font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    transition: transform .25s, box-shadow .25s;
-    box-shadow: 0 10px 24px -8px rgba(201,138,94,0.55);
+    transition: transform .25s ease, box-shadow .25s ease;
+    box-shadow: 0 10px 25px -10px rgba(110,139,116,0.6);
   }
   .btn-primary:hover { transform: translateY(-3px); }
 
   .btn-outline {
-    border: 1.5px solid var(--color-primary);
-    color: var(--color-primary);
+    border: 1.5px solid var(--color-text);
     padding: 15px 30px;
-    border-radius: 4px;
+    border-radius: 40px;
     font-weight: 600;
     font-size: 0.95rem;
   }
-  .btn-outline:hover { background: var(--color-primary); color: #fff; }
+  .btn-outline:hover { background: var(--color-text); color: #fff; }
 
-  .hero-photo-wrap {
-    position: relative;
-  }
-  .hero-photo-wrap img {
-    width: 100%;
-    height: 560px;
-    object-fit: cover;
-    border-radius: 8px 60px 8px 8px;
-  }
-  .hero-badge {
-    position: absolute;
-    bottom: -28px; left: -28px;
-    background: var(--color-primary);
-    color: #fff;
-    padding: 22px 26px;
-    border-radius: 6px;
-    max-width: 220px;
-    box-shadow: 0 20px 40px -12px rgba(92,125,108,0.5);
-  }
-  .hero-badge strong {
-    display: block;
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 4px;
-  }
-  .hero-badge span { font-size: 0.82rem; opacity: 0.9; }
-
-  /* SECTION TITLES */
-  .section-title {
-    text-align: left;
-    margin-bottom: 56px;
-    max-width: 620px;
-  }
-  .section-title .hero-eyebrow { margin-bottom: 14px; }
-  .section-title h2 {
-    font-size: clamp(2rem, 3.5vw, 2.7rem);
-    color: var(--color-text);
-  }
-  .section-title p {
-    margin-top: 16px;
-    color: #5a5c4f;
-    font-size: 1.02rem;
-  }
-
-  /* SERVICES */
-  .services {
-    padding: 120px 0;
-    background: #fff;
+  .hero-visual {
     position: relative;
   }
 
-  #services-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .service-item {
-    display: grid;
-    grid-template-columns: 60px 1fr auto;
-    gap: 30px;
-    align-items: start;
-    padding: 34px 0;
-    border-bottom: 1px solid rgba(92,125,108,0.18);
-    transition: background .25s;
-  }
-  .service-item:first-child { border-top: 1px solid rgba(92,125,108,0.18); }
-  .service-item:hover { background: rgba(232,224,207,0.35); }
-
-  .service-num {
-    font-family: var(--font-heading);
-    font-size: 1.3rem;
-    color: var(--color-accent);
-    font-style: italic;
-  }
-
-  .service-name {
-    font-family: var(--font-heading);
-    font-size: 1.4rem;
-    color: var(--color-primary);
-    margin-bottom: 8px;
-  }
-
-  .service-desc {
-    color: #565850;
-    font-size: 0.98rem;
-    max-width: 520px;
-  }
-
-  .service-price {
-    font-weight: 700;
-    color: var(--color-text);
-    font-size: 0.95rem;
-    white-space: nowrap;
-    align-self: center;
-    background: var(--color-secondary);
-    padding: 8px 18px;
-    border-radius: 30px;
-  }
-
-  /* ABOUT */
-  .about {
-    padding: 120px 0;
-    background: var(--color-background);
-    position: relative;
+  .hero-visual .frame {
+    border-radius: 220px 220px 20px 20px;
     overflow: hidden;
+    aspect-ratio: 3/4;
+    box-shadow: 0 30px 60px -20px rgba(59,58,52,0.35);
   }
 
-  .about-blob {
+  .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+
+  .hero-visual .badge {
     position: absolute;
-    bottom: -180px; left: -200px;
-    width: 480px; height: 480px;
-    background: var(--color-secondary);
-    border-radius: 60% 40% 30% 70% / 50% 60% 40% 50%;
-    opacity: .7;
-    z-index: 0;
-  }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 70px;
+    bottom: -24px;
+    left: -34px;
+    background: #fff;
+    padding: 18px 24px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px -10px rgba(59,58,52,0.25);
+    display: flex;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    gap: 14px;
+    max-width: 230px;
   }
 
-  .about-imgs {
+  .badge .dot {
+    width: 44px; height: 44px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+  }
+
+  .badge p { font-size: 0.82rem; font-weight: 600; color: var(--color-text); }
+
+  /* ---------- SECTION TITLES ---------- */
+  .section-title {
+    text-align: center;
+    max-width: 620px;
+    margin: 0 auto 60px;
+  }
+  .section-title .hero-eyebrow { justify-content: center; margin: 0 auto 18px; }
+  .section-title h2 { font-size: clamp(2rem, 3.5vw, 2.7rem); }
+
+  section { padding: 110px 0; }
+
+  /* ---------- SOBRE ---------- */
+  .about {
+    background: var(--color-secondary);
+    position: relative;
+  }
+
+  .about .container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .about-gallery {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 18px;
   }
-  .about-imgs img:first-child {
-    grid-column: 1 / 2;
-    height: 340px;
+
+  .about-gallery img {
+    border-radius: 8px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 4px 40px 4px 4px;
-    margin-top: 40px;
   }
-  .about-imgs img:last-child {
-    grid-column: 2 / 3;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 4px 4px 40px 4px;
-  }
+  .about-gallery .tall { grid-row: span 2; border-radius: 100px 8px 8px 8px; aspect-ratio: 2/3; }
+  .about-gallery .short { aspect-ratio: 4/3; }
 
-  .about-text .hero-eyebrow { margin-bottom: 18px; }
-
-  .about-text h2 {
-    font-size: clamp(1.9rem, 3.4vw, 2.5rem);
-    margin-bottom: 22px;
-    color: var(--color-text);
-  }
-
-  .about-text p {
-    color: #545648;
-    margin-bottom: 18px;
-    font-size: 1.02rem;
-    max-width: 520px;
-  }
+  .about-text h2 { margin-bottom: 22px; }
+  .about-text p { margin-bottom: 18px; color: #52514a; font-size: 1.02rem; }
 
   .about-list {
-    margin-top: 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+    margin-top: 30px;
+    display: grid;
+    gap: 16px;
   }
   .about-list li {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 600;
-    color: var(--color-primary);
-    font-size: 0.98rem;
+    gap: 14px;
+    align-items: flex-start;
+    font-weight: 500;
   }
   .about-list li::before {
-    content: '';
-    width: 8px; height: 8px;
+    content: '✓';
+    color: #fff;
+    background: var(--color-primary);
+    min-width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: var(--color-accent);
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    margin-top: 2px;
   }
 
-  /* GALLERY */
-  .gallery {
-    padding: 120px 0;
-    background: #fff;
-  }
+  /* ---------- SERVICES ---------- */
+  .services { background: var(--color-background); }
 
-  .gallery-grid {
+  #services-list {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
   }
-  .gallery-grid img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 4px;
-    filter: saturate(0.95);
-    transition: transform .5s, filter .5s;
-  }
-  .gallery-grid a { overflow: hidden; border-radius: 4px; display: block; }
-  .gallery-grid a:hover img { transform: scale(1.07); filter: saturate(1.1); }
-  .gallery-grid a:nth-child(2) { margin-top: 34px; }
-  .gallery-grid a:nth-child(4) { margin-top: 34px; }
 
-  /* CONTACT */
+  .service-item {
+    background: #fff;
+    border: 1px solid rgba(59,58,52,0.08);
+    border-radius: 18px;
+    padding: 38px 34px;
+    position: relative;
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+
+  .service-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 45px -20px rgba(59,58,52,0.18);
+  }
+
+  .service-item .service-number {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .service-item .service-name {
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+  }
+
+  .service-item .service-desc {
+    color: #5c5b53;
+    font-size: 0.98rem;
+    margin-bottom: 20px;
+  }
+
+  .service-item .service-price {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    border-top: 1px solid rgba(59,58,52,0.1);
+    padding-top: 16px;
+    width: 100%;
+  }
+
+  /* ---------- GALLERY / ambiente ---------- */
+  .ambience { background: var(--color-secondary); }
+
+  .ambience-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 20px;
+    height: 520px;
+  }
+  .ambience-grid .col {
+    display: grid;
+    gap: 20px;
+    height: 100%;
+  }
+  .ambience-grid img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  /* ---------- CONTATO ---------- */
   .contact {
-    padding: 130px 0;
     background: var(--color-primary);
     color: #fff;
     position: relative;
     overflow: hidden;
   }
-  .contact-blob {
+
+  .contact::after {
+    content: '';
     position: absolute;
-    top: -140px; right: -100px;
-    width: 420px; height: 420px;
+    right: -140px; bottom: -140px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
     background: rgba(255,255,255,0.06);
-    border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
   }
 
-  .contact-grid {
+  .contact .container {
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
+    align-items: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+  }
+
+  .contact .hero-eyebrow { color: #fbf3e8; }
+  .contact .hero-eyebrow::before { background: #fbf3e8; }
+
+  .contact h2 { color: #fff; font-size: clamp(2rem, 3.5vw, 2.6rem); margin-bottom: 20px; }
+  .contact p { color: rgba(255,255,255,0.85); margin-bottom: 30px; max-width: 440px; }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 34px;
+  }
+  .contact-info .item {
+    display: flex;
+    gap: 14px;
     align-items: center;
   }
-
-  .contact .hero-eyebrow { color: var(--color-secondary); }
-  .contact .hero-eyebrow::before { background: #fff; }
-
-  .contact h2 {
-    font-size: clamp(2rem, 3.6vw, 2.8rem);
-    margin-bottom: 22px;
-    color: #fff;
+  .contact-info .icon {
+    width: 46px; height: 46px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
   }
+  .contact-info strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.8; }
+  .contact-info span { font-weight: 600; font-size: 1.05rem; }
 
-  .contact p {
-    color: rgba(255,255,255,0.85);
-    margin-bottom: 34px;
-    max-width: 480px;
-    font-size: 1.02rem;
-  }
-
-  .btn-whats-big {
-    background: var(--color-accent);
-    color: #fff;
-    padding: 18px 38px;
-    border-radius: 4px;
+  .btn-white {
+    background: #fff;
+    color: var(--color-primary);
+    padding: 17px 36px;
+    border-radius: 40px;
     font-weight: 700;
-    font-size: 1.05rem;
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.4);
+    font-size: 1rem;
+    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.3);
+    transition: transform .25s ease;
   }
-  .btn-whats-big:hover { transform: translateY(-3px); }
+  .btn-white:hover { transform: translateY(-3px); }
 
   .contact-card {
     background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 6px;
-    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 20px;
+    padding: 44px;
+    backdrop-filter: blur(6px);
   }
-  .contact-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    color: var(--color-secondary);
-  }
-  .contact-item {
-    display: flex;
-    gap: 14px;
-    margin-bottom: 18px;
-    align-items: flex-start;
-  }
-  .contact-item strong {
-    display: block;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--color-secondary);
-    margin-bottom: 3px;
-  }
-  .contact-item span { color: rgba(255,255,255,0.9); font-size: 0.98rem; }
 
-  /* FOOTER */
+  .contact-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .contact-card p.quote {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  /* ---------- FOOTER ---------- */
   footer {
-    background: #2c3a30;
-    color: rgba(255,255,255,0.7);
-    padding: 50px 0 26px;
+    background: var(--color-text);
+    color: #d8d6cd;
+    padding: 50px 32px 26px;
+    text-align: center;
     font-size: 0.85rem;
   }
-  .footer-top {
+  footer #site-logo-text { color: #fff; font-size: 1.3rem; display:block; margin-bottom: 14px; }
+  footer .credits { margin-top: 20px; opacity: 0.6; font-size: 0.75rem; line-height: 1.8; }
+  footer .credits a { text-decoration: underline; }
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    background: #25D366;
+    width: 60px; height: 60px;
+    border-radius: 50%;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-bottom: 26px;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 999;
+    animation: pulse 2.4s infinite;
   }
-  .footer-top #site-logo-text { color: #fff; font-size: 1.3rem; }
-  .footer-credits { display: flex; flex-wrap: wrap; gap: 6px 4px; }
-  .footer-credits a { color: rgba(255,255,255,0.6); text-decoration: underline; }
-  .footer-bottom { text-align: center; opacity: 0.6; }
+  .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
 
-  /* RESPONSIVE */
-  @media (max-width: 960px) {
-    nav ul { display: none; }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 920px) {
+    .hero { grid-template-columns: 1fr; padding-top: 140px; }
+    .hero::before { display: none; }
+    .hero-visual { max-width: 340px; margin: 0 auto; }
+    .about .container { grid-template-columns: 1fr; }
+    .contact .container { grid-template-columns: 1fr; }
+    .ambience-grid { grid-template-columns: 1fr; height: auto; }
+    .ambience-grid .col { grid-auto-rows: 240px; }
+  }
+
+  @media (max-width: 720px) {
+    nav ul { position: fixed; top: 78px; left: 0; right: 0; background: var(--color-background); flex-direction: column; padding: 24px 32px; gap: 20px; transform: translateY(-150%); transition: transform .35s ease; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    nav ul.open { transform: translateY(0); }
     .menu-toggle { display: flex; }
-    .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-    .hero-photo-wrap { order: -1; }
-    .hero-photo-wrap img { height: 380px; }
-    .about-imgs { margin-top: 20px; }
-    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .gallery-grid a:nth-child(2), .gallery-grid a:nth-child(4) { margin-top: 0; }
-    .service-item { grid-template-columns: 1fr; gap: 10px; }
-    .service-price { justify-self: start; }
-  }
-
-  @media (max-width: 560px) {
-    .container { padding: 0 20px; }
-    .hero { padding: 130px 0 70px; }
-    .hero-badge { position: static; margin-top: 20px; max-width: 100%; }
-    .hero-photo-wrap img { border-radius: 8px; }
-    .footer-top { flex-direction: column; }
+    #services-list { grid-template-columns: 1fr; }
+    .hero-buttons { justify-content: center; }
+    .hero { text-align: center; }
+    .hero p.lead { margin-left:auto; margin-right:auto; }
+    .hero-eyebrow { margin-left:auto; margin-right:auto; }
+    .about-gallery .tall { border-radius: 60px 8px 8px 8px; }
   }
 </style>
 </head>
@@ -543,40 +559,61 @@
 
 <header>
   <div class="nav-wrap">
-    <div id="site-logo-text">Thais Nunes <span>nutri</span></div>
-    <nav>
-      <ul>
-        <li><a href="#servicos">Serviços</a></li>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="https://wa.me/5521966784098" class="btn-nav-whats" target="_blank" rel="noopener">Agendar</a></li>
-      </ul>
-    </nav>
+    <a href="#top" id="site-logo-text">Thais Nunes <span>Nutrição</span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
+    <nav>
+      <ul id="navList">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Atendimentos</a></li>
+        <li><a href="#ambiente">Ambiente</a></li>
+        <li><a href="#contato" class="nav-cta">Agendar</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-blob"></div>
-  <div class="container hero-grid">
-    <div>
-      <div class="hero-eyebrow">Nutrição clínica em Teresópolis</div>
-      <h1>Comer bem é um ato de <em>cuidado</em>, não de restrição.</h1>
-      <p class="lead">Acompanhamento nutricional individualizado, pensado para caber na sua rotina, no seu paladar e nos seus objetivos de saúde — sem fórmulas prontas.</p>
-      <div class="hero-actions">
-        <a href="https://wa.me/5521966784098" class="btn-primary" target="_blank" rel="noopener">Agendar consulta →</a>
-        <a href="#sobre" class="btn-outline">Conhecer o trabalho</a>
-      </div>
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Nutrição clínica · Teresópolis, RJ</span>
+    <h1>Comer bem é um jeito de <em>cuidar de si</em></h1>
+    <p class="lead">Acompanhamento nutricional individualizado, feito para se encaixar na sua rotina real — sem dietas restritivas, sem culpa, com resultados que duram.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/5521966784098" target="_blank" class="btn-primary">
+        Agendar consulta →
+      </a>
+      <a href="#sobre" class="btn-outline">Conhecer o trabalho</a>
     </div>
-    <div class="hero-photo-wrap">
-      <img src="https://images.unsplash.com/photo-1675270616422-ae71e8c99db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTZ8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Consulta nutricional com Thais Nunes">
-      <div class="hero-badge">
-        <strong>Teresópolis, RJ</strong>
-        <span>Atendimento próximo, atencioso e personalizado</span>
-      </div>
+  </div>
+  <div class="hero-visual">
+    <div class="frame">
+      <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8NXx8bnV0cmljaW9uaXN0YXxlbnwxfDB8fHwxNzg4MTIzNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Alimentação equilibrada e colorida">
+    </div>
+    <div class="badge">
+      <div class="dot">Th</div>
+      <p>Atendimento acolhedor, feito sob medida para você</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="container">
+    <div class="about-gallery">
+      <img class="tall" src="https://images.unsplash.com/photo-1675270360889-2c850358e364?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTN8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Consulta nutricional">
+      <img class="short" src="https://images.unsplash.com/photo-1675270569397-4028ce761a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTB8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Planejamento alimentar">
+      <img class="short" src="https://images.unsplash.com/photo-1740560052706-fd75ee856b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MjB8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Atendimento nutricional em Teresópolis">
+    </div>
+    <div class="about-text">
+      <span class="hero-eyebrow">Sobre o atendimento</span>
+      <h2>Um espaço de escuta antes de qualquer plano alimentar</h2>
+      <p>Cada corpo tem uma história, uma rotina e um objetivo diferente. Por isso, o trabalho da Thais Nunes começa sempre pela escuta: entender seus hábitos, suas dificuldades e o que realmente cabe no seu dia a dia em Teresópolis.</p>
+      <p>A partir daí, o plano nutricional é construído em conjunto — com orientações claras, ajustes ao longo do caminho e acompanhamento próximo, para que a mudança seja sustentável de verdade.</p>
+      <ul class="about-list">
+        <li>Avaliação nutricional completa e individualizada</li>
+        <li>Planos alimentares flexíveis, sem restrições desnecessárias</li>
+        <li>Acompanhamento contínuo com ajustes conforme sua evolução</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -584,154 +621,119 @@
 <section class="services" id="servicos">
   <div class="container">
     <div class="section-title">
-      <div class="hero-eyebrow">O que ofereço</div>
-      <h2>Serviços pensados para cada etapa da sua jornada</h2>
-      <p>Cada plano é construído a partir da sua história, seus exames e sua realidade — não existe protocolo genérico por aqui.</p>
+      <span class="hero-eyebrow">Atendimentos</span>
+      <h2>Como podemos caminhar juntas</h2>
     </div>
-
     <div id="services-list">
       <div class="service-item">
-        <div class="service-num">01</div>
-        <div>
-          <h3 class="service-name">Consulta Nutricional</h3>
-          <p class="service-desc">Avaliação completa do seu histórico alimentar, rotina e objetivos, com escuta atenta para construir um plano alimentar viável e sustentável.</p>
-        </div>
-        <div class="service-price">Sob consulta</div>
+        <span class="service-number">01</span>
+        <h3 class="service-name">Consulta Inicial</h3>
+        <p class="service-desc">Primeiro encontro para conhecer sua história de saúde, hábitos alimentares e objetivos, com avaliação nutricional completa.</p>
+        <span class="service-price">Sob consulta</span>
       </div>
-
       <div class="service-item">
-        <div class="service-num">02</div>
-        <div>
-          <h3 class="service-name">Acompanhamento Contínuo</h3>
-          <p class="service-desc">Retornos periódicos para ajustar o plano conforme sua evolução, resultados de exames e mudanças na rotina do dia a dia.</p>
-        </div>
-        <div class="service-price">Sob consulta</div>
+        <span class="service-number">02</span>
+        <h3 class="service-name">Plano Alimentar Personalizado</h3>
+        <p class="service-desc">Elaboração de um plano alimentar individualizado, adaptado à sua rotina, preferências e objetivos de saúde.</p>
+        <span class="service-price">Sob consulta</span>
       </div>
-
       <div class="service-item">
-        <div class="service-num">03</div>
-        <div>
-          <h3 class="service-name">Reeducação Alimentar</h3>
-          <p class="service-desc">Trabalho gradual de mudança de hábitos, com foco em relação saudável com a comida e resultados que se sustentam a longo prazo.</p>
-        </div>
-        <div class="service-price">Sob consulta</div>
+        <span class="service-number">03</span>
+        <h3 class="service-name">Retorno e Acompanhamento</h3>
+        <p class="service-desc">Consultas de retorno para acompanhar sua evolução, revisar o plano e ajustar o que for necessário no seu ritmo.</p>
+        <span class="service-price">Sob consulta</span>
       </div>
-
       <div class="service-item">
-        <div class="service-num">04</div>
-        <div>
-          <h3 class="service-name">Orientação Nutricional Familiar</h3>
-          <p class="service-desc">Planejamento alimentar pensado para toda a família, respeitando fases de vida, preferências e necessidades específicas de cada membro.</p>
-        </div>
-        <div class="service-price">Sob consulta</div>
+        <span class="service-number">04</span>
+        <h3 class="service-name">Orientação Nutricional Contínua</h3>
+        <p class="service-desc">Suporte próximo entre as consultas, para tirar dúvidas e manter a constância nas mudanças de hábito.</p>
+        <span class="service-price">Sob consulta</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="about" id="sobre">
-  <div class="about-blob"></div>
-  <div class="container about-grid">
-    <div class="about-imgs">
-      <img src="https://images.unsplash.com/photo-1675270826311-37e832422125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTV8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Thais Nunes atendendo paciente">
-      <img src="https://images.unsplash.com/photo-1556911073-52527ac43761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8OXx8bnV0cmljaW9uaXN0YXxlbnwxfDB8fHwxNzg4MTIzNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Alimentação saudável e balanceada">
-    </div>
-    <div class="about-text">
-      <div class="hero-eyebrow">Sobre o atendimento</div>
-      <h2>Um olhar individual para cada história alimentar</h2>
-      <p>Na consulta, o ponto de partida não é uma tabela de calorias, é você: sua rotina em Teresópolis, seu paladar, suas limitações de tempo e o que realmente é possível manter no longo prazo.</p>
-      <p>O trabalho é conduzido com escuta, respeito ao seu ritmo e ajustes constantes — porque saúde alimentar se constrói aos poucos, com consistência, não com regras rígidas.</p>
-      <ul class="about-list">
-        <li>Atendimento humanizado e sem julgamentos</li>
-        <li>Planos alimentares individualizados</li>
-        <li>Acompanhamento próximo entre as consultas</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="gallery" id="galeria">
+<section class="ambience" id="ambiente">
   <div class="container">
     <div class="section-title">
-      <div class="hero-eyebrow">Um vislumbre</div>
-      <h2>O ambiente e a essência do cuidado nutricional</h2>
+      <span class="hero-eyebrow">Ambiente</span>
+      <h2>Um cuidado que começa no primeiro olhar</h2>
     </div>
-    <div class="gallery-grid">
-      <a href="#"><img src="https://images.unsplash.com/photo-1675270360889-2c850358e364?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTN8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Detalhe de consulta nutricional"></a>
-      <a href="#"><img src="https://images.unsplash.com/photo-1675270616422-ae71e8c99db0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTZ8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Atendimento personalizado"></a>
-      <a href="#"><img src="https://images.unsplash.com/photo-1675270826311-37e832422125?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTV8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Consulta em andamento"></a>
-      <a href="#"><img src="https://images.unsplash.com/photo-1556911073-52527ac43761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8OXx8bnV0cmljaW9uaXN0YXxlbnwxfDB8fHwxNzg4MTIzNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Alimentação equilibrada"></a>
+    <div class="ambience-grid">
+      <div class="col">
+        <img src="https://images.unsplash.com/photo-1675270569397-4028ce761a67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTB8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Consultório de nutrição">
+      </div>
+      <div class="col">
+        <img src="https://images.unsplash.com/photo-1675270360889-2c850358e364?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MTN8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Atendimento personalizado">
+        <img src="https://images.unsplash.com/photo-1740560052706-fd75ee856b44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8MjB8fG51dHJpY2lvbmlzdGF8ZW58MXwwfHx8MTc4ODEyMzc0Nnww&ixlib=rb-4.1.0&q=80&w=1080" alt="Nutricionista em Teresópolis">
+      </div>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contato">
-  <div class="contact-blob"></div>
-  <div class="container contact-grid">
-    <div>
-      <div class="hero-eyebrow">Vamos conversar</div>
+  <div class="container">
+    <div class="contact-text">
+      <span class="hero-eyebrow">Vamos conversar?</span>
       <h2>Dê o primeiro passo para uma relação mais leve com a comida</h2>
-      <p>Fale agora pelo WhatsApp e agende sua consulta em Teresópolis, RJ. Retorno rápido e atendimento sem burocracia.</p>
-      <a href="https://wa.me/5521966784098" class="btn-whats-big" target="_blank" rel="noopener">
-        Falar no WhatsApp
+      <p>Fale agora pelo WhatsApp e agende sua consulta com a Thais Nunes, em Teresópolis, RJ.</p>
+
+      <div class="contact-info">
+        <div class="item">
+          <div class="icon">📍</div>
+          <div><strong>Atendimento em</strong><span>Teresópolis, RJ</span></div>
+        </div>
+        <div class="item">
+          <div class="icon">📞</div>
+          <div><strong>WhatsApp</strong><span>(21) 96678-4098</span></div>
+        </div>
+      </div>
+
+      <a href="https://wa.me/5521966784098" target="_blank" class="btn-white">
+        <svg viewBox="0 0 32 32" width="20" height="20" fill="#6E8B74"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.5.756 4.83 2.05 6.77L4 29l7.42-2.02A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 21.6c-1.98 0-3.83-.55-5.41-1.5l-.39-.23-4.4 1.2 1.18-4.29-.25-.4A9.56 9.56 0 0 1 5.4 15C5.4 9.14 10.14 4.4 16 4.4S26.6 9.14 26.6 15 21.86 24.6 16 24.6zm5.35-7.18c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.15-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44s1.05 2.83 1.2 3.03c.15.2 2.06 3.14 5 4.4.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.11.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.26-.2-.55-.35z"/></svg>
+        Chamar no WhatsApp
       </a>
     </div>
+
     <div class="contact-card">
-      <h3>Informações</h3>
-      <div class="contact-item">
-        <div>
-          <strong>WhatsApp</strong>
-          <span>(21) 96678-4098</span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div>
-          <strong>Localização</strong>
-          <span>Teresópolis, RJ</span>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div>
-          <strong>Atendimento</strong>
-          <span>Consultas mediante agendamento prévio</span>
-        </div>
-      </div>
+      <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDM3MDY1fDB8MXxzZWFyY2h8NXx8bnV0cmljaW9uaXN0YXxlbnwxfDB8fHwxNzg4MTIzNzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Nutrição equilibrada">
+      <p class="quote">"O objetivo não é uma dieta perfeita, é uma relação saudável e duradoura com a comida."</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <div class="footer-top">
-      <div id="site-logo-text">Thais Nunes <span>nutri</span></div>
-      <div class="footer-credits">
-        Fotos:
-        <a href="https://unsplash.com/@beyzahzah" target="_blank" rel="noopener">B Y G</a>,
-        <a href="https://unsplash.com/@jsnbrsc" target="_blank" rel="noopener">Jason Briscoe</a>
-        — via Unsplash
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © Nutricionista Thais Nunes — Teresópolis, RJ. Todos os direitos reservados.
-    </div>
+  <span id="site-logo-text">Thais Nunes Nutrição</span>
+  <p>Nutricionista em Teresópolis, RJ · Atendimento com hora marcada</p>
+  <div class="credits">
+    Fotos: <a href="https://unsplash.com/@brookelark" target="_blank">Brooke Lark</a> ·
+    <a href="https://unsplash.com/@beyzahzah" target="_blank">B Y G</a> ·
+    <a href="https://unsplash.com/@markuswinkler" target="_blank">Markus Winkler</a> — via Unsplash<br>
+    © Thais Nunes Nutrição. Todos os direitos reservados.
   </div>
 </footer>
 
+<a href="https://wa.me/5521966784098" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.373 3 4 8.373 4 15c0 2.5.756 4.83 2.05 6.77L4 29l7.42-2.02A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 21.6c-1.98 0-3.83-.55-5.41-1.5l-.39-.23-4.4 1.2 1.18-4.29-.25-.4A9.56 9.56 0 0 1 5.4 15C5.4 9.14 10.14 4.4 16 4.4S26.6 9.14 26.6 15 21.86 24.6 16 24.6zm5.35-7.18c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.15-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.5-.66-.51h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.44s1.05 2.83 1.2 3.03c.15.2 2.06 3.14 5 4.4.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.11.56-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.13-.26-.2-.55-.35z"/></svg>
+</a>
+
 <script>
-  const toggle = document.getElementById('menuToggle');
-  const navUl = document.querySelector('nav ul');
-  toggle.addEventListener('click', () => {
-    const open = navUl.style.display === 'flex';
-    navUl.style.display = open ? 'none' : 'flex';
-    navUl.style.flexDirection = 'column';
-    navUl.style.position = 'absolute';
-    navUl.style.top = '72px';
-    navUl.style.right = '20px';
-    navUl.style.background = '#fbf8f2';
-    navUl.style.padding = '20px 26px';
-    navUl.style.borderRadius = '6px';
-    navUl.style.boxShadow = '0 20px 40px -10px rgba(0,0,0,0.15)';
-    navUl.style.gap = '18px';
+  const menuToggle = document.getElementById('menuToggle');
+  const navList = document.getElementById('navList');
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('open');
+  });
+  document.querySelectorAll('#navList a').forEach(link => {
+    link.addEventListener('click', () => navList.classList.remove('open'));
+  });
+
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 40) {
+      header.style.boxShadow = '0 8px 30px -18px rgba(0,0,0,0.25)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
   });
 </script>
 
